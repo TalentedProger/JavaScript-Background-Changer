@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./reset.css">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,200,300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic" rel="stylesheet" />
+	<title>Background changer</title>
+</head>
+<body class="body">
+	<div class="container">
+		<div class="wrapper_mood">
+			<div class="background-none background-blur"></div>
+			<h1 class="wrapper_mood_question">How are you feeling?</h1>
+
+			<div class="mood_choise">
+				<div class="mood_variant mood_variant_happy">
+					<label for="cheerful">
+						<input type="checkbox" id="cheerful" class="real_checkbox">
+						<span class="custom_checkbox cst_cheerful"></span>
+						I'm in a happy mood.
+					</label>
+				</div>
+
+				<div class=" mood_variant mood_variant_sad">
+					<label for="sad">
+						<input type="checkbox" id="sad" class="real_checkbox">
+						<span class="custom_checkbox cst_sad"></span>
+						I'm in a sad mood.
+					</label>
+				</div>
+
+				<div class="mood_variant mood_variant_quite">
+					<label for="quite">
+          	<input type="checkbox" id="quite" class="real_checkbox">
+						<span class="custom_checkbox cst_quite"></span>
+						I'm in a quite mood.
+					</label>
+				</div>
+
+				<div class="mood_variant mood_variant_angry">
+					<label for="angry">
+						<input type="checkbox" id="angry" class="real_checkbox">
+						<span class="custom_checkbox cst_angry"></span>
+						I'm in a angry mood.
+					</label>
+				</div>
+			</div>
+				<ul class="finish_question">
+					<li><a href="#" id="btn_fnsh" class="button_finish">Generate Colors</a></li>
+				</ul>
+		</div>
+		<div class="wrapper_mood wrapper_colors">
+
+			<h1 class="wrapper_mood_question wrapper_colors_title">Your mood is similar to this colors </h1>
+
+			<div class="colors_choise">
+				<div class="colors_grid_choise">
+					<div class="color_1 color_container"></div>
+					<div class="color_2 color_container"></div>
+					<div class="color_3 color_container"></div>
+					<div class="color_4 color_container"></div>
+					<div class="color_5 color_container"></div>
+					<div class="color_6 color_container"></div>
+					<div class="color_7 color_container"></div>
+					<div class="color_8 color_container"></div>
+					<div class="color_9 color_container"></div>
+					<div class="color_10 color_container"></div>
+					<div class="color_11 color_container"></div>
+					<div class="color_12 color_container"></div>
+				</div>
+			</div>
+				<ul class="change_color_ul">
+					<!-- <li><a href="#" id="btn_fnsh" class="button_finish change_color_btn">Change Colors</a></li> -->
+					<button class="music_on_btn" id="ChangerColorBtn">Change Color</button>
+					<button class="music_on_btn_esp"></button>
+				</ul>
+		</div>
+	</container>
+	<script src="./main.js"></script>	
+</body>
+</html>

@@ -1,0 +1,390 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Josefin Sans", sans-serif;
+}
+@font-face {
+	src: url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+	font-family: "Josefin Sans", sans-serif;
+}
+.container {
+	display: flex;
+	width: 80%;
+	height: 70%;
+	flex-direction: row;
+}
+body {
+	font-family: "Josefin Sans", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url('./img/oboi_4k_dlya_rabochego_stola_kompa_i_nouta_25.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+}
+.wrapper_mood {
+	height: 70vh;
+	width: 40%;
+	padding: 50px;
+	margin: auto;
+	overflow: auto;
+
+	background-color: transparent;
+	border-radius: 50px;
+	border: 3px solid white;
+	color: rgb(0, 0, 0);
+	font-size: 20px;
+	backdrop-filter: blur(10px);
+	overflow: hidden;
+}
+.wrapper_mood_question {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 500;
+	letter-spacing: -1px;
+	color:rgb(255, 255, 255);
+	background-color: black;
+}
+.mood_choise {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-block: 30px;
+	font-size: 24px;
+}
+.mood_variant {
+	width: 90%;
+	height: 10%;
+	display: flex;
+	border-radius: 20px;
+	border: 2px solid white;
+	padding-block: 2%;
+	background-color: rgb(255, 255, 255);
+	cursor: pointer;
+}
+.mood_variant_happy:hover {
+	background-color:#228B22;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.mood_variant_sad:hover {
+	background-color:#483D8B;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.mood_variant_quite:hover {
+	background-color:#DAA520;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.mood_variant_angry:hover {
+	background-color:#800000;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.mood_variant:not(:first-child) {
+	margin-top: 5%;
+}
+.mood_variant >label {
+	margin-left: 10px;
+}
+.mood_variant >label > input {
+	margin-right: 3vh;
+}
+/* стилизация чекбоксов */
+
+.real_checkbox {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+.custom_checkbox {
+	position: relative;
+	display: inline-block;
+	background-color: rgb(0, 0, 0);
+	vertical-align: sub;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 2px solid rgb(255, 255, 255);
+}
+.custom_checkbox::before {
+	content: "";
+	position: absolute;
+	display: inline-block;
+	background-image: url();
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 25px;
+	height: 25px;
+	transform: translate(-50%,-50%);
+	left: 50%;
+	top: 50%;
+	transition: all 0.25s ease-in;
+	opacity: 0;
+}
+.custom_checkbox.cst_cheerful::before {
+	background-image: url(./img/happy-1-svgrepo-com.svg);
+}
+.custom_checkbox.cst_quite::before {
+	background-image: url(./img/sinister-smile-svgrepo-com.svg);
+}
+.custom_checkbox.cst_angry::before {
+	background-image: url(./img/angry-svgrepo-com.svg);
+}
+.custom_checkbox.cst_sad::before {
+	background-image: url(./img/cry-svgrepo-com.svg);
+}
+.real_checkbox:checked + .custom_checkbox::before {
+	opacity: 1;
+}
+.finish_question {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 15%;
+}
+.button_finish {
+	padding-block: 15px;
+	padding-inline: 10px;
+	background-color: rgb(0, 0, 0);
+	border: 2px solid rgb(255, 255, 255);
+	color: white;
+	font-weight: 700;
+	border-radius: 2vw;
+	transition: all 0.2s ease-in;
+}
+.button_finish:hover {
+	background-color: rgb(255, 255, 255);
+	border: 2px solid rgb(0, 0, 0);
+	color: rgb(0, 0, 0);
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 15px;
+	scale: 1.1;
+}
+
+.finish_question {
+	height: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;}
+
+	.wrapper_colors_title {
+		width: 90%;
+		align-items: center;
+    justify-content: center;
+		background-color: rgb(0, 0, 0);
+		color: rgb(255, 255, 255);
+	}
+
+	.colors_choise {
+		padding-block: 10%;
+    height: 50%;
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+	}
+	.color_container {
+		width: 50px;
+		height: 50px;
+		border: 2px solid black;
+		border-radius: 50%;
+	}
+	
+	.colors_grid_choise {
+		height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    gap: 10%;
+    padding-bottom: 15%;
+	}
+	.change_color_ul,.finish_question {
+		padding-block: 5%;
+	}
+	.change_color_ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding-inline: 5%;
+		padding-top: 10%;
+	}
+	.change_color_btn {
+		text-align: center;
+	}
+	.music_on_btn {
+		padding-block: 5%;
+		padding-inline: 5%;
+		background-color: rgb(255, 255, 255);
+		border: 2px solid rgb(0, 0, 0);
+		color: rgb(0, 0, 0);
+		font-weight: 700;
+		border-radius: 2vw;
+	}
+	.music_on_btn:hover {
+		box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 15px;
+		scale: 1.1;
+	}
+	.music_on_btn_esp {
+		position: relative;
+		width: 20%;
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background-color: rgb(255, 255, 255);
+		border: 2px solid black;
+	}
+	.music_on_btn_esp::after {
+		content: "";
+		position: absolute;
+		top: 0%;
+		right: 0%;
+		width: 50%;
+		aspect-ratio: 1;
+		background-image: url(./img/music-play-play-button-svgrepo-com.svg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		display: block;
+		transform: translate(-45%,50%);
+	}
+	.music_on_btn_esp:hover {
+		box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 15px;
+		transform: scale(1.1);	
+	}
+	.music_on_btn_esp:focus::after {
+		background-image: url(./img/media-player-music-pause-svgrepo-com.svg);
+	}
+
+	.background-none {
+		background-image: none;
+	}
+	.background-blur {
+	background-image: url(./img/✧.jfif);
+	background-repeat: no-repeat;
+	background-position: center;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+	}
+	@media (max-width:1300px) {
+		.colors_grid_choise {
+			height: 100%;
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(3, 3fr);
+			gap: 10px;
+			padding-bottom: 15%;
+	}
+	.change_color_ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+		padding: 0;
+		margin-top: 25%;
+}
+.finish_question {
+	margin-top: 10%;
+}
+.mood_choise {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-block: 15px;
+	font-size: 16px;
+}
+.mood_variant {
+	width: 100%;
+	padding: 0;
+}
+.wrapper_mood_question {
+	width: 100%;
+	font-size: 26px;
+}
+.colors_choise {
+	padding-block: 10%;
+	height: 50%;
+	/* width: 80%; */
+	/* display: flex; */
+	margin: 0 auto;
+}
+.wrapper_mood {
+	padding: 30px;
+}
+.color_container {
+	width: 45px;
+	height: 45px;
+}
+	}
+
+
+
+@media (max-width:800px) {
+	.wrapper_mood_question {
+		font-size: 20px;
+}
+.wrapper_mood {
+	padding: 25px;
+	padding-bottom: 0;
+}
+.color_container {
+	width: 40px;
+	height: 40px;
+}
+.button_finish, .music_on_btn {
+	font-size: medium;
+	width: 100%;
+	padding: 5px;
+}
+
+.change_color_ul {
+	display: flex;
+	flex-direction: column;
+}
+.music_on_btn_esp {
+	width: 40%;
+}
+.change_color_ul {
+	margin-top: 5%;
+}
+
+}
+@media (max-width:630px) {
+	.container {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    flex-direction: column;
+		gap: 30px;
+}
+.music_on_btn_esp {
+	width: 25%;
+}
+.wrapper_mood {
+	padding: 25px;
+	padding-bottom: 0;
+	display: flex;
+	width: 90%;
+	height: 90%;
+	flex-direction: column;
+	gap: 5px;
+}
+.change_color_ul {
+	margin-top: 0%;
+}
+.button_finish, .music_on_btn {
+	font-size: x-large;
+	width: 70%;
+	padding: 5px;
+	border-radius: 30px;
+}
+.colors_grid_choise {
+	height: 100%;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(4,3fr);
+	padding-bottom: 15%;
+}
+}
